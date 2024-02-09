@@ -29,7 +29,7 @@ class FirstFragment(val experimentIndex: Int) : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        experimentVM = ViewModelProvider(this)[ExperimentViewModel::class.java]
+        experimentVM = ViewModelProvider(requireActivity())[ExperimentViewModel::class.java]
     }
 
     lateinit var names: Array<String>
@@ -59,7 +59,7 @@ class FirstFragment(val experimentIndex: Int) : Fragment() {
             sharedPreferences.edit()
                 .putString(FIRST_ENTRY, entry)
                 .apply()
-            experimentVM.runExperiment(experimentIndex, entry)
+            experimentVM.runExperiment(experimentIndex, entry, requireActivity())
         }
 
         experimentVM.mutableExperimentResult.observe(this) {

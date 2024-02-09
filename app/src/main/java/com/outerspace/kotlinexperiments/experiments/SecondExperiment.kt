@@ -1,6 +1,9 @@
 package com.outerspace.kotlinexperiments.experiments
 
+import android.content.Context
 import android.util.Log
+import androidx.fragment.app.FragmentActivity
+import androidx.lifecycle.MutableLiveData
 import com.outerspace.kotlinexperiments.ExperimentInterface
 
 // simple example
@@ -24,7 +27,7 @@ val s6 = Element(listOf(Element(5), s5, Element(4)))
 val sample = Element(listOf(Element(2), Element(4), Element(8), s1, s3, Element(1), Element(7), s6, Element(8)))
 
 class SecondExperiment: ExperimentInterface {
-    override fun executeExperiment(example: String): String {
+    override fun executeExperiment(example: String, liveResult: MutableLiveData<String>, activity: FragmentActivity) {
         val sb = StringBuilder()
 
         sb.appendLine("------Recursive solution:")
@@ -33,7 +36,7 @@ class SecondExperiment: ExperimentInterface {
         sb.appendLine()
         sb.appendLine("----Non Recursive solution:")
         sb.appendLine(flatElements(sample))
-        return sb.toString()
+        liveResult.value = sb.toString()
     }
 }
 
