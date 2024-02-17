@@ -1,6 +1,5 @@
 package com.outerspace.kotlinexperiments.experiments
 
-import android.content.Context
 import android.util.Log
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.MutableLiveData
@@ -26,7 +25,7 @@ val s5 = Element(listOf(Element(9), Element(4), s4, Element(2)))
 val s6 = Element(listOf(Element(5), s5, Element(4)))
 val sample = Element(listOf(Element(2), Element(4), Element(8), s1, s3, Element(1), Element(7), s6, Element(8)))
 
-class SecondExperiment: ExperimentInterface {
+class FlattenMultilevelArray: ExperimentInterface {
     override fun executeExperiment(example: String, liveResult: MutableLiveData<String>, activity: FragmentActivity) {
         val sb = StringBuilder()
 

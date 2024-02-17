@@ -11,7 +11,7 @@ import java.io.InputStream
 
 const val EXPERIMENT_4_ASSET_NAME = "experiment4.txt"
 
-class FourthExperiment: ExperimentInterface {
+class FraudulentActivityHackerrank: ExperimentInterface {
     override fun executeExperiment(example: String, liveResult: MutableLiveData<String>, activity: FragmentActivity) {
 
         val main = activity as MainInterface

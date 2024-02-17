@@ -3,11 +3,9 @@ package com.outerspace.kotlinexperiments
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStoreOwner
@@ -40,13 +38,14 @@ class MainActivity : AppCompatActivity(), MainInterface {
 
         viewPager = findViewById(R.id.pager)
         viewPager.adapter = object: FragmentStateAdapter(this) {
-            val first: FirstFragment by lazy { FirstFragment(0) }
-            val second: FirstFragment by lazy { FirstFragment(1) }
-            val third: FirstFragment by lazy { FirstFragment(2)}
-            val fourth: FirstFragment by lazy { FirstFragment(3)}
+            val first: ExperimentFragment by lazy { ExperimentFragment(0) }
+            val second: ExperimentFragment by lazy { ExperimentFragment(1) }
+            val third: ExperimentFragment by lazy { ExperimentFragment(2)}
+            val fourth: ExperimentFragment by lazy { ExperimentFragment(3)}
+            val fifth: ExperimentFragment by lazy { ExperimentFragment(4)}
 
             val fragmentList: MutableList<Fragment> = mutableListOf(
-                fourth, third, second, first
+                fifth, fourth, third, second, first
             )
 
             override fun getItemCount(): Int = fragmentList.size

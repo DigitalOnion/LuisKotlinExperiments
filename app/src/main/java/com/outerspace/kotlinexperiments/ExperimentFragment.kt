@@ -8,14 +8,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.viewModels
-import androidx.databinding.DataBindingUtil
-import com.outerspace.kotlinexperiments.databinding.ActivityMainBinding
 import com.outerspace.kotlinexperiments.databinding.FragmentFirstBinding
 
 // read: https://stackoverflow.com/questions/61306719/onactivitycreated-is-deprecated-how-to-properly-use-lifecycleobserver
 
-class FirstFragment(val experimentIndex: Int) : Fragment() {
+class ExperimentFragment(val experimentIndex: Int) : Fragment() {
     private lateinit var binding: FragmentFirstBinding
     private lateinit var experimentVM: ExperimentViewModel
 

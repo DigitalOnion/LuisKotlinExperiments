@@ -1,6 +1,5 @@
 package com.outerspace.kotlinexperiments.experiments
 
-import android.content.Context
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.MutableLiveData
 import com.outerspace.kotlinexperiments.ExperimentInterface
@@ -9,7 +8,7 @@ typealias Stack<T> = MutableList<T>
 fun <T> Stack<T>.push(item: T) = add(item)
 fun <T> Stack<T>.pop(): T? = removeLastOrNull()
 
-class FirstExperiment: ExperimentInterface {
+class LexicographicAnalysis: ExperimentInterface {
     override fun executeExperiment(example: String, liveResult: MutableLiveData<String>, activity: FragmentActivity) {
         val seq = example.iterator()
 
